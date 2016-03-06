@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+	    "target": "es5",
+	    "outDir": "dist/",
+	    "noImplicitAny": true,
+	    "removeComments": true,
+	    "preserveConstEnums": true,
+	    "sourceMap": true,
+	    "moduleResolution": "node",
+        "rootDir": "src/"
+     },
+     "filesGlob": [
+	     "src/**/*.ts",
+	     "!./node_modules/**/*.ts"
+    ],
+    "exclude": [
+	    "node_modules",
+	    "wwwroot",
+        "typings/browser",
+        "typings/browser.d.ts"
+    ]
+}
