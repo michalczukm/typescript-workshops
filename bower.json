@@ -1,0 +1,25 @@
+{
+  "name": "typescript-workshops",
+  "description": "GoYello TypeScript workshops sample application",
+  "main": "app.ts",
+  "authors": [
+    "Michał Michalczuk <michal.michalczuk@goyello.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/michalczukm/typescript-workshops",
+  "moduleType": [
+    "globals"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-lite": "~1.1.2",
+    "font-awesome": "^4.5.0"
+  }
+}
