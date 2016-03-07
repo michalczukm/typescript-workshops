@@ -4,6 +4,8 @@
   "description": "GoYello TypeScript workshops sample application",
   "main": "app.ts",
   "dependencies": {
+    "body-parser": "^1.15.0",
+    "debug": "^2.2.0",
     "express": "^4.13.4",
     "tslint": "^3.5.0",
     "typescript": "^1.8.7",
