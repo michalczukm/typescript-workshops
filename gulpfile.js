@@ -59,9 +59,6 @@ gulp.task('compile-ts', ['typings'], function () {
 
 
 gulp.task('lint-ts', function () {
-	// // there is actually a bug in tslint -> waiting for fix
-	// return;
-
 	return gulp.src(path.join(conf.paths.src, '/**/*.ts'))
 		.pipe($.tslint())
 		.pipe($.tslint.report('prose'));
