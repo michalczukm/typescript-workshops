@@ -1,6 +1,5 @@
 import {PostsService} from '../business_logic/posts.service';
 import express = require('express');
-import {InMemoryPostsRepository} from '../data_access/in-memory-posts.repository';
 
 let router: express.Router = express.Router();
 

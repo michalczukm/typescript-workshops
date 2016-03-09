@@ -28,7 +28,7 @@
         "src/server/business_logic/posts.service.ts",
         "src/server/data_access/in-memory-posts.repository.ts",
         "src/server/data_access/repository.ts",
-        "src/server/model/post.model.ts",
+        "src/server/model/post.ts",
         "typings/main.d.ts"
     ],
     "atom": {

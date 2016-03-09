@@ -1,4 +1,4 @@
-import {Post} from '../model/post.model';
+import {Post} from '../model/post';
 import {Repository} from './repository';
 import moment = require('moment');
 
