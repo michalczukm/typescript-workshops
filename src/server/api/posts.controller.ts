@@ -24,5 +24,10 @@ export function postsController(
         }
     });
 
+    router.put('/:id', (request: express.Request, response: express.Response) => {
+        // HTTP 501 code stands for `Not implemented`
+        response.sendStatus(501);
+    });
+
     return router;
 }
