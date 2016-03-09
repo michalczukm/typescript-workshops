@@ -1,16 +1,14 @@
-import {InMemoryPostsRepository} from './data_access/in-memory-posts.repository';
-import {PostsService} from './business_logic/posts.service';
+import {postsController} from './api/posts.controller';
+    import {InMemoryPostsRepository} from './data_access/in-memory-posts.repository';
+    import {PostsService} from './business_logic/posts.service';
 import path = require('path');
 import express = require('express');
 
 let postsService = new PostsService(new InMemoryPostsRepository());
 
 export function setRouting(app: express.Application): void {
-    app.get('/api/posts', (request: express.Request, response: express.Response) => {
-        let posts = postsService.getAll();
-        return response.json(posts);
-    });
-
+    app.use('/api/posts', postsController(postsService));
+    
     // serve static resources - the dummy way
     serveStatics(app);
 }

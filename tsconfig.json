@@ -22,6 +22,7 @@
         "typings/browser.d.ts"
     ],
     "files": [
+        "src/server/api/posts.controller.ts",
         "src/server/app.routing.ts",
         "src/server/app.ts",
         "src/server/business_logic/posts.service.ts",
