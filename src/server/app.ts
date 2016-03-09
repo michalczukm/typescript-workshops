@@ -1,5 +1,6 @@
 import {Post} from './model/post.model';
 import {PostsService} from './business_logic/posts.service';
+import {InMemoryPostsRepository} from './data_access/in-memory-posts.repository';
 import express = require('express');
 import bodyParser = require('body-parser');
 import path = require('path');
@@ -9,8 +10,7 @@ const config = {
     port: 8000
 }
 
-var postsService = new PostsService();
-
+var postsService = new PostsService(new InMemoryPostsRepository());
 
 let app = express();
 app.use(bodyParser.urlencoded({ extended: true }));

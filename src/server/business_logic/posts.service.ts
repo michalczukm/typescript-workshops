@@ -4,10 +4,7 @@ import {Post} from '../model/post.model';
 import moment = require('moment');
 
 export class PostsService {
-    private postsRepository: Repository<Post>;
-    
-    constructor() {
-        this.postsRepository = new InMemoryPostsRepository();
+    constructor(private postsRepository: Repository<Post>) {
     }
     
     public getAll(): Array<Post> {
