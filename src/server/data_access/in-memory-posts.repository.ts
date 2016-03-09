@@ -1,8 +1,8 @@
 import {Post} from '../model/post.model';
-import {PostsRepository} from './posts.repository';
+import {Repository} from './repository';
 import moment = require('moment');
 
-export class InMemoryPostsRepository implements PostsRepository {
+export class InMemoryPostsRepository implements Repository<Post> {
     private posts: Array<Post>;
     
     constructor() {
