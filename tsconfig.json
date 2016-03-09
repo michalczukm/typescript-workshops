@@ -1,23 +1,35 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-	    "target": "es5",
-	    "outDir": "dist/",
-	    "noImplicitAny": true,
-	    "removeComments": true,
-	    "preserveConstEnums": true,
-	    "sourceMap": true,
-	    "moduleResolution": "node",
+        "target": "es5",
+        "outDir": "dist/",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "moduleResolution": "node",
         "rootDir": "src/"
-     },
-     "filesGlob": [
-	     "src/**/*.ts",
-	     "!./node_modules/**/*.ts"
+    },
+    "filesGlob": [
+        "src/**/*.ts",
+        "typings/main.d.ts",
+        "!./node_modules/**/*.ts"
     ],
     "exclude": [
-	    "node_modules",
-	    "wwwroot",
+        "node_modules",
+        "wwwroot",
         "typings/browser",
         "typings/browser.d.ts"
-    ]
+    ],
+    "files": [
+        "src/server/app.ts",
+        "src/server/business_logic/posts.service.ts",
+        "src/server/data_access/in-memory-posts.repository.ts",
+        "src/server/data_access/repository.ts",
+        "src/server/model/post.model.ts",
+        "typings/main.d.ts"
+    ],
+    "atom": {
+        "rewriteTsconfig": true
+    }
 }
