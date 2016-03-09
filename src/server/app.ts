@@ -1,4 +1,5 @@
 import {Post} from './model/post.model';
+import {PostsService} from './business_logic/posts.service';
 import express = require('express');
 import bodyParser = require('body-parser');
 import path = require('path');
@@ -7,6 +8,9 @@ import moment = require('moment');
 const config = {
     port: 8000
 }
+
+var postsService = new PostsService();
+
 
 let app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,24 +29,7 @@ app.use('/bower_components', express.static(path.join(__dirname, '/../../bower_c
 
 // api
 app.get('/api/posts', (request: express.Request, response: express.Response) => {
-    let posts = [
-        <Post> {
-            id: 1,
-            name: 'First Post ever',
-            date: moment().add(-10, 'days')
-        },
-        <Post> {
-            id: 2,
-            name: 'Another post',
-            date: moment().add(-5, 'days')
-        },
-        <Post> {
-            id: 3,
-            name: 'Another great post',
-            date: moment()
-        },
-    ];
-    
+    let posts = postsService.getAll();
     return response.json(posts);
 });
 
