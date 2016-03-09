@@ -13,5 +13,16 @@ export function postsController(
         response.json(posts);
     });
 
+    router.get('/:id', (request: express.Request, response: express.Response) => {
+        var id: number = request.params.id;
+        var post = postsService.getById(id);
+
+        if (post == null) {
+            response.sendStatus(404);
+        } else {
+            response.json(post);
+        }
+    });
+
     return router;
 }
