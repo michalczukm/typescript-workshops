@@ -19,8 +19,8 @@ var client = {
         dist: path.join(paths.dist, 'client', 'content')
     },
     ts: {
-        app: 'app.js',
-        src: 'src/client',
+        app: 'app.ts',
+        src: 'src/client/app',
         dist: path.join(paths.dist, 'client')
     },
     html: {

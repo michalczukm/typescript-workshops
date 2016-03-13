@@ -4,8 +4,7 @@ import {routerConfig} from './app.routes';
 export module Blog {
     export function init() {
         let moduleDependencies = [
-            'ui.router',
-            'ngLodash',
+            'ui.router'
         ];
 
         angular.module('Blog', moduleDependencies)

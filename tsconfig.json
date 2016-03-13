@@ -18,8 +18,7 @@
     "exclude": [
         "node_modules",
         "wwwroot",
-        "typings/browser",
-        "typings/browser.d.ts"
+        "typings/browser"
     ],
     "files": [
         "src/client/app/app.routes.ts",

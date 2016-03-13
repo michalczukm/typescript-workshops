@@ -12,72 +12,60 @@ var $ = require('gulp-load-plugins')({
 
 // typescript compilation and bundling
 var webpackConfig = {
-    contentBase: './dist/',
+    output: { filename: 'app.js' },
     devtool: 'source-map',
     sourceMap: true,
     module: {
         preLoaders: [{ test: /\.ts$/, exclude: /node_modules/, loader: 'tslint-loader' }], // TypeScript hints
         loaders: [{ test: /\.ts$/, exclude: /node_modules/, loaders: ['ng-annotate', 'ts-loader'] }]
     },
-    output: { filename: 'app.js' },
     resolve: {
         extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
     }
 };
 
 gulp.task('webpack', function () {
-    gulp.src(conf.client.ts.src +'/app.ts')
-    .pipe($.debug({title: 'webpack:'}))
-    // gulp.src(path.join(conf.client.ts.src, conf.client.ts.app))
-    .pipe(
-        webpack(webpackConfig, null, function (err, stats) {
-            if (err) {
-                throw new $.util.PluginError('webpack', err);
-            }
-            $.util.log('[webpack]', stats.toString());
-        })
-    )
-    .pipe(gulp.dest(conf.client.ts.dist));
+    return gulp.src(path.join(conf.client.ts.src, conf.client.ts.app))
+        .pipe(
+            webpack(webpackConfig, null, function (err, stats) {
+                if (err) {
+                    throw new $.util.PluginError('webpack', err);
+                }
+                $.util.log('[webpack]', stats.toString());
+            })
+        )
+        .pipe(gulp.dest(conf.client.ts.dist));
 });
 
 gulp.task('watch-ts', function () {
-    gulp.watch(path.join(config.client.ts.src, '/**/*.ts'), ['tsd', 'webpack']);
+    return gulp.watch(path.join(config.client.ts.src, '/**/*.ts'), ['typings', 'webpack']);
 });
 
 gulp.task('watch-html', function () {
-    gulp.watch(path.join(config.client.ts.src, '/**/*.ts'), ['inject']);
+    return gulp.watch(path.join(config.client.ts.src, '/**/*.ts'), ['inject']);
 });
 
 gulp.task('inject', function () {
-    gulp.src('./src/client/index.html')
+    return gulp.src('./src/client/index.html')
         .pipe($.inject(gulp.src(bowerFiles(), { read: false }), { name: 'bower' }))
         .pipe($.inject(
             gulp.src(path.join('./**/*.+(js|css)'), { read: false, cwd: conf.client.dist } )
         ))
         .pipe(gulp.dest(conf.client.dist));
-        // .pipe($.inject(gulp.src('./**/*.+(js|css)'), { read: false, cwd: path.join(__dirname, conf.client.dist) } ))
-        // .pipe($.inject(gulp.src(path.join(conf.client.dist, '/**/*.+(js|css)'), { read: false } ), {ignorePath: 'dist/client'} ))
-
-        // .pipe($.inject(eventStream.merge(
-        //     gulp.src(path.join(conf.client.dist, '/**/*.+(js|css)'), { read: false} )
-            // .pipe($.debug({title: 'inject'}))
-        // ), {relative: false}
-    // ))
 });
 
 gulp.task('clean:client', function () {
-    del([path.join(conf.client.dist, '/')]);
+    return del([path.join(conf.client.dist, '/')]);
 });
 
-// Sass files compilation
 gulp.task('css', function () {
-    gulp.src(path.join(conf.client.css.src, '/**/*.css'))
+    return gulp.src(path.join(conf.client.css.src, '/**/*.css'))
         // .pipe(sass({ outputStyle: 'compressed' }))
         .pipe(gulp.dest(conf.client.css.dist));
 });
 
 gulp.task('watch-css', function () {
-    gulp.watch(path.join(conf.client.css.src, '/**/*.css', ['css']);
+    gulp.watch(path.join(conf.client.css.src, '/**/*.css', ['css']));
 });
 
 
