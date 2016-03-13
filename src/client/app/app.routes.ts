@@ -1,18 +1,20 @@
 /** @ngInject */
-export function routerConfig($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider) {
+export function routerConfig($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider, $locationProvider: ng.ILocationProvider) {
     $stateProvider
         .state('root', {
             url: '/',
-            templateUrl: './layout/root.html',
+            templateUrl: 'app/layout/root.html',
             controllerAs: 'vm'
         })
         .state('root.home', {
             url: 'home',
-            templateUrl: './home/home.html',
+            templateUrl: 'app/home/home.html',
             controller: 'HomeController',
             controllerAs: 'vm'
         });
 
     // default route
     $urlRouterProvider.otherwise('/home');
+    
+    $locationProvider.html5Mode(true);
 }
