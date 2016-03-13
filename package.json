@@ -14,12 +14,17 @@
   },
   "devDependencies": {
     "del": "^2.2.0",
+    "event-stream": "^3.3.2",
     "gulp-debug": "^2.1.2",
     "gulp-filter": "^4.0.0",
+    "gulp-inject": "^3.0.0",
+    "gulp-install": "^0.6.0",
     "gulp-load-plugins": "^1.1.0",
     "gulp-tslint": "^4.1.2",
     "gulp-typescript": "^2.10.0",
     "gulp-typings": "^1.1.0",
+    "main-bower-files": "^2.11.1",
+    "webpack-stream": "^3.1.0",
     "wrench": "^1.5.8"
   },
   "scripts": {
