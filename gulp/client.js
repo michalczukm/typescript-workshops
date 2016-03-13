@@ -65,13 +65,13 @@ gulp.task('clean:client', function () {
 
 // Sass files compilation
 gulp.task('css', function () {
-    gulp.src(conf.client.css.src)
+    gulp.src(path.join(conf.client.css.src, '/**/*.css'))
         // .pipe(sass({ outputStyle: 'compressed' }))
-        .pipe(gulp.dest(conf.client.dist));
+        .pipe(gulp.dest(conf.client.css.dist));
 });
 
 gulp.task('watch-css', function () {
-    gulp.watch(conf.client.css.src, ['css']);
+    gulp.watch(path.join(conf.client.css.src, '/**/*.css', ['css']);
 });
 
 

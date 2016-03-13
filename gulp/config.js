@@ -12,10 +12,11 @@ var server = {
 };
 
 var client = {
+    src: 'src/client',
     dist: path.join(paths.dist, 'client'),
     css: {
-        src: 'src/client/content/**/*.css',
-        dist: 'dist/content'
+        src: 'src/client/content',
+        dist: path.join(paths.dist, 'client', 'content')
     },
     ts: {
         app: 'app.js',
