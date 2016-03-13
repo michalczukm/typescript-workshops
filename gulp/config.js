@@ -1,4 +1,5 @@
 var path = require('path');
+var util = require('gulp-util');
 
 var paths = {
     dist: 'dist'
@@ -30,6 +31,16 @@ var client = {
         ]
     }
 }
+
+exports.errorHandler = function(title) {
+  'use strict';
+
+    return function(err) {
+        util.log(util.colors.red('[' + title + ']'), err.toString());
+        this.emit('end');
+    };
+};
+
 
 exports.paths = paths;
 exports.server = server;

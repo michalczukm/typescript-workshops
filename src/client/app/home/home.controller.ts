@@ -1,3 +1,3 @@
 export class HomeController {
-    title: string = "Goyello TypeScript Workshops";
+    public title: string = "Goyello TypeScript Workshops1234";
 }
