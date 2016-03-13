@@ -49,14 +49,20 @@ gulp.task('watch-html', function () {
 });
 
 gulp.task('inject', function () {
-    gulp.src('src/client/index.html')
+    gulp.src('./src/client/index.html')
         .pipe($.inject(gulp.src(bowerFiles(), { read: false }), { name: 'bower' }))
-        .pipe($.inject(eventStream.merge(
-            gulp.src(path.join(conf.client.dist, '/**/*.+(js|css)'), { read: false, base: 'client'} )
-            .pipe($.debug({title: 'inject'}))
-        )
-    ))
-    .pipe(gulp.dest(conf.client.dist));
+        .pipe($.inject(
+            gulp.src(path.join('./**/*.+(js|css)'), { read: false, cwd: conf.client.dist } )
+        ))
+        .pipe(gulp.dest(conf.client.dist));
+        // .pipe($.inject(gulp.src('./**/*.+(js|css)'), { read: false, cwd: path.join(__dirname, conf.client.dist) } ))
+        // .pipe($.inject(gulp.src(path.join(conf.client.dist, '/**/*.+(js|css)'), { read: false } ), {ignorePath: 'dist/client'} ))
+
+        // .pipe($.inject(eventStream.merge(
+        //     gulp.src(path.join(conf.client.dist, '/**/*.+(js|css)'), { read: false} )
+            // .pipe($.debug({title: 'inject'}))
+        // ), {relative: false}
+    // ))
 });
 
 gulp.task('clean:client', function () {
