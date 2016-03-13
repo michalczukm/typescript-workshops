@@ -27,7 +27,7 @@ var runServer = function () {
 };
 
 gulp.task('clean:server', function () {
-	return del([path.join(conf.server.dist, '/')]);
+	return del.sync([path.join(conf.server.dist, '/')]);
 });
 
 gulp.task('lint-ts:server', function () {

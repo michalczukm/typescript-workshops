@@ -26,6 +26,7 @@ gulp.task('clean', function () {
  */
 gulp.task('serve', function () {
 	gulp.start('serve:server');
+	gulp.start('serve:client');
 });
 
 /**

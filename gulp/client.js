@@ -25,7 +25,7 @@ var webpackConfig = {
 };
 
 gulp.task('webpack', function () {
-    return gulp.src(path.join(conf.client.ts.src, conf.client.ts.app))
+    gulp.src(path.join(conf.client.ts.src, conf.client.ts.app))
         .pipe(
             webpack(webpackConfig, null, function (err, stats) {
                 if (err) {
@@ -38,15 +38,15 @@ gulp.task('webpack', function () {
 });
 
 gulp.task('watch-ts', function () {
-    return gulp.watch(path.join(config.client.ts.src, '/**/*.ts'), ['typings', 'webpack']);
+    gulp.watch(path.join(conf.client.ts.src, '/**/*.ts'), ['webpack']);
 });
 
 gulp.task('watch-html', function () {
-    return gulp.watch(path.join(config.client.ts.src, '/**/*.ts'), ['inject']);
+    gulp.watch(path.join(conf.client.ts.src, '/**/*.ts'), ['inject']);
 });
 
 gulp.task('inject', function () {
-    return gulp.src('./src/client/index.html')
+    gulp.src('./src/client/index.html')
         .pipe($.inject(gulp.src(bowerFiles(), { read: false }), { name: 'bower' }))
         .pipe($.inject(
             gulp.src(path.join('./**/*.+(js|css)'), { read: false, cwd: conf.client.dist } )
@@ -55,17 +55,16 @@ gulp.task('inject', function () {
 });
 
 gulp.task('clean:client', function () {
-    return del([path.join(conf.client.dist, '/')]);
+    return del.sync([path.join(conf.client.dist, '/')]);
 });
 
 gulp.task('css', function () {
-    return gulp.src(path.join(conf.client.css.src, '/**/*.css'))
-        // .pipe(sass({ outputStyle: 'compressed' }))
+    gulp.src(path.join(conf.client.css.src, '/**/*.css'))
         .pipe(gulp.dest(conf.client.css.dist));
 });
 
 gulp.task('watch-css', function () {
-    gulp.watch(path.join(conf.client.css.src, '/**/*.css', ['css']));
+    gulp.watch(path.join(conf.client.css.src, '/**/*.css'), ['css']);
 });
 
 
