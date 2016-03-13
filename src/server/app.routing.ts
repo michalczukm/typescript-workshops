@@ -14,13 +14,16 @@ export function setRouting(app: express.Application): void {
 }
 
 function serveStatics(app: express.Application): void {
-    app.get('/', (request: express.Request, response: express.Response) => {
-        let options = {
-            root: __dirname + '/../../src/client'
-        };
+    app.use(express.static(path.join(__dirname, '../../dist/client')));
 
+    app.use('/bower_components', express.static(path.join(__dirname, '/../../bower_components')));
+    app.use('/content', express.static(path.join(__dirname, '../../dist/client/content')));
+    
+    app.get('/*', (request: express.Request, response: express.Response) => {
+        let options = {
+            root: path.join(__dirname,'../../dist/client')
+        };
+        
         response.sendFile('index.html', options);
     });
-    app.use('/content', express.static(path.join(__dirname, '/../../src/client/content')));
-    app.use('/bower_components', express.static(path.join(__dirname, '/../../bower_components')));
 }
