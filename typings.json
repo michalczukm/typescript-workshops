@@ -5,6 +5,8 @@
   },
   "devDependencies": {},
   "ambientDependencies": {
+    "angular": "registry:dt/angular#1.5.0+20160310153852",
+    "angular-ui-router": "registry:dt/angular-ui-router#1.1.5+20160112161118",
     "body-parser": "github:DefinitelyTyped/DefinitelyTyped/body-parser/body-parser.d.ts#9a2c50ea846ee6ae36feaea0accc77ae7b08a748",
     "express": "github:DefinitelyTyped/DefinitelyTyped/express/express.d.ts#dd638012d63e069f2c99d06ef4dcc9616a943ee4",
     "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#48c1e3c1d6baefa4f1a126f188c27c4fefd36bff"
