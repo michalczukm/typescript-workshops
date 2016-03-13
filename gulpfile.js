@@ -24,10 +24,7 @@ gulp.task('clean', function () {
 /**
  * Run server and serve client app
  */
-gulp.task('serve', function () {
-	gulp.start('serve:server');
-	gulp.start('serve:client');
-});
+gulp.task('serve',['serve:server', 'serve:client' ]);
 
 /**
  * Clean all previous distibution, run server and serve client
