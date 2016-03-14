@@ -44,13 +44,23 @@ gulp.task('watch-ts', function () {
         .on('error', conf.errorHandler('watch-ts'));
 });
 
+gulp.task('resources', function() {
+   gulp.src([path.join(conf.client.src, '/**/*.*'), '!' + path.join(conf.client.src,'/**/*.+(ts|css|html)')])
+       .pipe(gulp.dest(conf.client.dist)); 
+});
+
+gulp.task('html', function() {
+   gulp.src(path.join(conf.client.html.src, '/**/*.html'))
+       .pipe(gulp.dest(conf.client.dist));
+});
+
 gulp.task('watch-html', function () {
-    gulp.watch(path.join(conf.client.ts.src, '/**/*.ts'), ['inject'])
+    gulp.watch(path.join(conf.client.html.src, '/**/*.html'), ['html'])
         .on('error', conf.errorHandler('watch-html'));
 });
 
 gulp.task('inject', ['webpack'], function () {
-    gulp.src('./src/client/index.html')
+    gulp.src(conf.client.html.index)
         .pipe($.inject(gulp.src(bowerFiles(), { read: false }), { name: 'bower' }))
         .pipe($.inject(
             gulp.src(path.join('./**/*.+(js|css)'), { read: false, cwd: conf.client.dist } )
@@ -74,6 +84,6 @@ gulp.task('watch-css', function () {
 
 
 // main tasks
-gulp.task('build:client', ['clean:client', 'css', 'typings', 'inject']);
+gulp.task('build:client', ['clean:client', 'html', 'css', 'typings', 'resources', 'inject']);
 gulp.task('watch:client', ['watch-ts', 'watch-css']);
 gulp.task('serve:client', ['build:client', 'watch:client']);

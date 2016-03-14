@@ -25,10 +25,8 @@ var client = {
         dist: path.join(paths.dist, 'client')
     },
     html: {
-        src: [
-            'src/client/**/*.html',
-            'index.html'
-        ]
+        index: 'src/client/index.html',
+        src: 'src/client/app'
     }
 }
 
