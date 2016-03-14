@@ -3,18 +3,22 @@ export function routerConfig($stateProvider: ng.ui.IStateProvider, $urlRouterPro
     $stateProvider
         .state('root', {
             url: '/',
-            templateUrl: 'app/layout/root.html',
+            abstract: true,
+            templateUrl: 'layout/root.html',
             controllerAs: 'vm'
         })
         .state('root.home', {
             url: 'home',
-            templateUrl: 'app/home/home.html',
+            templateUrl: 'home/home.html',
             controller: 'HomeController',
             controllerAs: 'vm'
         });
 
     // default route
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.when('/', '/home');
+    $urlRouterProvider.otherwise('/');
     
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode({
+        enabled: true
+    });
 }

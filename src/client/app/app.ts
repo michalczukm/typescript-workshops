@@ -6,7 +6,6 @@ module Blog {
         'ui.router'
     ];
 
-    // angular.module('Blog', []);
     angular.module('Blog', moduleDependencies)
         .config(routerConfig)
         .controller('HomeController', HomeController);
