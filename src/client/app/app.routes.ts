@@ -12,6 +12,17 @@ export function routerConfig($stateProvider: ng.ui.IStateProvider, $urlRouterPro
             templateUrl: 'main/home.html',
             controller: 'HomeController',
             controllerAs: 'vm'
+        })
+        .state('root.post', {
+            url: 'post/:postId',
+            templateUrl: 'posts/post.html',
+            controller: 'PostController',
+            controllerAs: 'vm',
+            resolve: {
+                postId: ['$stateParams', function($stateParams: any) {
+                    return $stateParams.postId;
+                }]
+            }
         });
 
     // default route
