@@ -1,5 +1,6 @@
 import {HomeController} from './main/home.controller';
 import {routerConfig} from './app.routes';
+import {PostsService} from './posts/posts.service';
 
 module Blog {
     let moduleDependencies = [
@@ -9,5 +10,6 @@ module Blog {
 
     angular.module('Blog', moduleDependencies)
         .config(routerConfig)
-        .controller('HomeController', HomeController);
+        .controller('HomeController', HomeController)
+        .service('postsService', PostsService);
 }

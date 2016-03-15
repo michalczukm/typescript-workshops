@@ -24,7 +24,7 @@ export class InMemoryPostsRepository implements Repository<Post> {
             <Post> {
                 id: 3,
                 title: 'Another great post',
-                headline: 'Vinyl typewriter authentic',
+                headline: 'Vinyl typewriter authentic cool',
                 date: moment(),
                 content: `Vinyl typewriter authentic, intelligentsia meh brunch brooklyn small batch truffaut DIY twee narwhal keffiyeh kombucha tumblr.`
             },
