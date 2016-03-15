@@ -21,6 +21,9 @@
         "typings/browser"
     ],
     "files": [
+        "src/client/app/app.routes.ts",
+        "src/client/app/app.ts",
+        "src/client/app/main/home.controller.ts",
         "src/server/api/posts.controller.ts",
         "src/server/app.routing.ts",
         "src/server/app.ts",
