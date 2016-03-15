@@ -27,7 +27,7 @@ var runServer = function () {
 };
 
 gulp.task('clean:server', function () {
-	return del([path.join(conf.server.dist, '/')]);
+	return del.sync([path.join(conf.server.dist, '/')]);
 });
 
 gulp.task('lint-ts:server', function () {
@@ -40,6 +40,7 @@ gulp.task('build:server', ['clean:server', 'compile-ts:server'], function () {})
 
 gulp.task('watch', ['build:server'], function () {
 	gulp.watch(path.join(conf.server.src, '/**/*.ts'), ['serve:server'])
+        .on('error', conf.errorHandler('watch:server'));
 });
 
 gulp.task('serve:server', ['lint-ts:server', 'compile-ts:server'], function () {
