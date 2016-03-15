@@ -2,7 +2,7 @@
 
 var fs = require('fs');
 var gulp = require('gulp');
-var conf = require('./config');
+var config = require('./config.gulpfile');
 
 var $ = require('gulp-load-plugins')({
 	pattern: ['gulp-*']
@@ -13,7 +13,7 @@ var tsProject = $.typescript.createProject('tsconfig.json', {
 });
 
 gulp.task('typings', function () {
-    if (!fs.existsSync(conf.server.typings)) {
+    if (!fs.existsSync(config.server.typings)) {
         gulp.src('./typings.json')
             .pipe($.typings());
         }
@@ -26,5 +26,5 @@ gulp.task('compile-ts:server', ['typings'], function () {
 		.pipe($.typescript(tsProject));
 
 	return tsResult.js
-        .pipe(gulp.dest(conf.paths.dist));
+        .pipe(gulp.dest(config.paths.dist));
 });

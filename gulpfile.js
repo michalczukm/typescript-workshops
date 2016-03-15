@@ -4,7 +4,7 @@ var gulp = require('gulp');
 var wrench = require('wrench');
 var del = require('del');
 var path = require('path');
-var conf = require('./gulp/config');
+var conf = require('./gulp/config.gulpfile');
 var install = require('gulp-install');
 
 /**
