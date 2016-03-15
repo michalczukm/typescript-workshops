@@ -7,9 +7,10 @@
   "ambientDependencies": {
     "angular": "registry:dt/angular#1.5.0+20160310153852",
     "angular-ui-router": "registry:dt/angular-ui-router#1.1.5+20160112161118",
-    "jquery": "registry:dt/jquery#1.10.0+20160303223636",
+    "jquery": "registry:dt/jquery#1.10.0+20160303223636",    
     "body-parser": "github:DefinitelyTyped/DefinitelyTyped/body-parser/body-parser.d.ts#9a2c50ea846ee6ae36feaea0accc77ae7b08a748",
     "express": "github:DefinitelyTyped/DefinitelyTyped/express/express.d.ts#dd638012d63e069f2c99d06ef4dcc9616a943ee4",
+    "lodash": "registry:dt/lodash#3.10.0+20160314033737",
     "mime": "registry:dt/mime#0.0.0+20151204023458",
     "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#48c1e3c1d6baefa4f1a126f188c27c4fefd36bff",
     "serve-static": "registry:dt/serve-static#0.0.0+20160104095738"

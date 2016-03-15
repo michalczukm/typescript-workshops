@@ -5,7 +5,7 @@
   <div class="mdl-card coffee-pic mdl-cell mdl-cell--8-col">
     <div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url('content/images/latest_post.jpg')">
       <h3>
-          <a href="entry.html">Latest post title</a>
+          <a href="entry.html">{{ vm.latestPost.title }}</a>
       </h3>
     </div>
 
@@ -13,7 +13,7 @@
       <div class="minilogo"></div>
       <div>
         <strong>Latest post</strong>
-        <span>2 days ago</span>
+        <span>{{ vm.latestPost.date }}</span>
       </div>
     </div>
   </div>
@@ -25,7 +25,7 @@
   <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
     <div class="mdl-card__media mdl-color--white mdl-color-text--grey-600">
       <img src="content/images/goyello_mini.jpeg">
-      +1,337
+      +{{ vm.viewsCount }}
     </div>
     <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
       <div>
@@ -45,26 +45,25 @@
 
 
 
-  <!-- ------------------------- sample post ----------------------------------------------------- -->
-  <div class="mdl-card amazing mdl-cell mdl-cell--12-col">
+  <!-- ------------------------- posts ----------------------------------------------------- -->
+  <div ng-repeat="post in vm.posts" class="mdl-card amazing mdl-cell mdl-cell--12-col">
     <div class="mdl-card__title mdl-color-text--grey-50">
-      <h3 class="quote"><a href="entry.html">
-          I couldn’t take any pictures but this was an amazing thing…</a></h3>
+      <h3 class="quote">
+          <a href="entry.html">{{post.headline}} </a>
+      </h3>
     </div>
     <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-      Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt.
-      Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia.
-      Ex officia laborum et consequat duis.
+      {{ post.content }}
     </div>
     <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
       <div class="minilogo"></div>
       <div>
-        <strong>The Post</strong>
-        <span>2 days ago</span>
+        <strong>{{ post.title }}</strong>
+        <span>{{ post.date }}</span>
       </div>
     </div>
   </div>
-  <!-- ------------------------- END: sample post ------------------------------------------------ -->
+  <!-- ------------------------- END: posts ------------------------------------------------ -->
 
 
 
