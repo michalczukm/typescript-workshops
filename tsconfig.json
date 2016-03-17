@@ -20,23 +20,6 @@
         "wwwroot",
         "typings/browser"
     ],
-    "files": [
-        "src/client/app/app.config.ts",
-        "src/client/app/app.routes.ts",
-        "src/client/app/app.ts",
-        "src/client/app/config.ts",
-        "src/client/app/main/home.controller.ts",
-        "src/client/app/posts/post.controller.ts",
-        "src/client/app/posts/posts.service.ts",
-        "src/server/api/posts.controller.ts",
-        "src/server/app.routing.ts",
-        "src/server/app.ts",
-        "src/server/business_logic/posts.service.ts",
-        "src/server/data_access/in-memory-posts.repository.ts",
-        "src/server/data_access/repository.ts",
-        "src/server/model/post.ts",
-        "typings/main.d.ts"
-    ],
     "atom": {
         "rewriteTsconfig": true
     }

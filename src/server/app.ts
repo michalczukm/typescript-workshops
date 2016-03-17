@@ -1,18 +1,13 @@
-import {setRouting} from './app.routing';
-import express = require('express');
-import bodyParser = require('body-parser');
-import moment = require('moment');
+let http = require('http');
 
-const config = {
-    port: 8000
-};
 
-let app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-setRouting(app);
-
-app.listen(config.port, function() {
-     console.log(`Express server listening on port ${config.port}.`);
+let server = http.createServer(function (request: any, response: any) {
+  response.writeHead(200, {"Content-Type": "text/plain"});
+  response.end("Hello World\n");
 });
+
+// Listen on port 8000, IP defaults to 127.0.0.1
+server.listen(8000);
+
+// Put a friendly message on the terminal
+console.log("Server running at http://127.0.0.1:8000/"); 

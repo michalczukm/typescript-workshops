@@ -1,28 +1,119 @@
 <!doctype html>
-<html lang="en" ng-app="Blog">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Goyello TypeScript Workshops</title>
-    <base href="/">
-    
-    <!-- bower:css -->
-    <!-- bower installed css files will go here... -->
-    <!-- endinject -->
-    <!-- inject:css -->
-    <!-- built css files will go here... -->
-    <!-- endinject -->
+
+    <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="content/material.grey-orange.min.css">
+    <link rel="stylesheet" href="content/styles.css">
   </head>
   <body>
-        <div ui-view></div>
-
-        <!-- bower:js -->
-        <!-- bower installed scripts will go here... -->
-        <!-- endinject -->
-        <!-- inject:js -->
-        <!-- app scripts will go here... -->
-        <!-- endinject -->
-
-  </body>
+    <div class="workshops mdl-layout mdl-js-layout">
+      <main class="mdl-layout__content">
+        <div class="workshops__posts mdl-grid">
+          
+          
+          <!-- ------------------------- last post --------------------------------------------------------- -->
+          <div class="mdl-card coffee-pic mdl-cell mdl-cell--8-col">
+            <div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url('content/images/latest_post.jpg')">
+              <h3>
+                  <a href="entry.html">Latest post title</a>
+              </h3>
+            </div>
+            
+            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+              <div class="minilogo"></div>
+              <div>
+                <strong>Latest post</strong>
+                <span>2 days ago</span>
+              </div>
+            </div>
+          </div>
+          <!-- ------------------------- END: last post --------------------------------------------------- -->
+          
+          
+          
+          <!-- ------------------------- overview --------------------------------------------------------- -->          
+          <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
+            <div class="mdl-card__media mdl-color--white mdl-color-text--grey-600">
+              <img src="content/images/goyello_mini.jpeg">
+              +1,337
+            </div>
+            <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
+              <div>
+                <strong>Overview</strong>
+              </div>
+              <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="menubtn">
+                <li class="mdl-menu__item">About</li>
+                <li class="mdl-menu__item">Search</li>
+              </ul>
+              <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="fa fa-bars" ></i>
+                <span class="visuallyhidden">show menu</span>
+              </button>
+            </div>
+          </div>
+          <!-- ------------------------- END: overview --------------------------------------------------- -->          
+          
+          
+          
+          <!-- ------------------------- sample post ----------------------------------------------------- -->                    
+          <div class="mdl-card amazing mdl-cell mdl-cell--12-col">
+            <div class="mdl-card__title mdl-color-text--grey-50">
+              <h3 class="quote"><a href="entry.html">
+                  I couldn’t take any pictures but this was an amazing thing…</a></h3>
+            </div>
+            <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+              Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. 
+              Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. 
+              Ex officia laborum et consequat duis.
+            </div>
+            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+              <div class="minilogo"></div>
+              <div>
+                <strong>The Post</strong>
+                <span>2 days ago</span>
+              </div>
+            </div>
+          </div>
+          <!-- ------------------------- END: sample post ------------------------------------------------ -->                    
+          
+          
+          
+          <!-- ------------------------- navigation ------------------------------------------------------ -->                              
+          <nav class="workshops-nav mdl-cell mdl-cell--12-col">
+            <div class="section-spacer"></div>
+            <a href="entry.html" class="workshops-nav__button" title="show more">
+              More
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="fa fa-long-arrow-right"></i>
+              </button>
+            </a>
+          </nav>
+          <!-- ------------------------- END: navigation ------------------------------------------------- -->                              
+          
+          
+          
+        </div>
+        <footer class="mdl-mini-footer mdl-mini-footer--links">
+          <div class="mdl-mini-footer--left-section">
+            <button class="mdl-mini-footer--social-btn social-btn social-btn__twitter">
+              <span class="visuallyhidden">Twitter</span>
+            </button>
+          </div>
+          <div class="mdl-mini-footer--right-section">
+            <a class="mdl-mini-footer--link" href="https://getmdl.io/templates/index.html">Based on</span>              
+            <button class="mdl-mini-footer--social-btn social-btn social-btn__mdl">
+            </button>
+          </div>
+        </footer>
+      </main>
+    </div>
+    
+    <script src="../../bower_components/material-design-lite/material.min.js"></script>
+    
+  </body>  
 </html>
