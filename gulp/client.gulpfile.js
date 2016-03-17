@@ -88,5 +88,5 @@ gulp.task('watch-css', function () {
 
 // main tasks
 gulp.task('build:client', ['clean:client', 'html', 'css', 'typings', 'resources', 'inject']);
-gulp.task('watch:client', ['watch-ts', 'watch-css']);
+gulp.task('watch:client', ['watch-ts', 'watch-css', 'watch-html']);
 gulp.task('serve:client', ['build:client', 'watch:client']);
